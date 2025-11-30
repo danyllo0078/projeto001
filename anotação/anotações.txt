@@ -1,0 +1,1 @@
+primeira parte do projeto feira com as imagens feita por ia e feito somente por html css e javascript, ainda estou aprendendo a fazer integrações e mexer em git e GitHub, também pretendo a mexer em APIs e banco de dados SQL  mais a frente, demorou aproximadamente 5 horas pro site ser feito mas estou bem feliz com o resultado que tive.

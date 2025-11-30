@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>barbershop</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon-16x16.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- TELA DE LOGIN/REGISTRO (Bloqueio Inicial) -->
+    <section id="authPage" class="auth-page">
+        <div class="auth-container">
+            <div class="auth-box">
+                <h2>barbershop</h2>
+                <p class="auth-subtitle">Barbearia Premium</p>
+                
+                <div class="auth-toggle">
+                    <button class="auth-btn active" id="loginBtn">Login</button>
+                    <button class="auth-btn" id="registerBtn">Registro</button>
+                </div>
+
+                <!-- FORMULÁRIO DE LOGIN -->
+                <form id="loginForm" class="auth-form active">
+                    <div class="form-group">
+                        <label for="loginEmail">Email:</label>
+                        <input type="email" id="loginEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Senha:</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Entrar</button>
+                    <p class="form-text">Não tem conta? <a href="#" id="switchToRegister">Registre-se</a></p>
+                </form>
+
+                <!-- FORMULÁRIO DE REGISTRO -->
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="registerName">Nome Completo:</label>
+                        <input type="text" id="registerName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email:</label>
+                        <input type="email" id="registerEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPhone">Telefone:</label>
+                        <input type="tel" id="registerPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Senha:</label>
+                        <input type="password" id="registerPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">Confirmar Senha:</label>
+                        <input type="password" id="registerConfirmPassword" name="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Registrar</button>
+                    <p class="form-text">Já tem conta? <a href="#" id="switchToLogin">Faça login</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL (Aparece após login) -->
+    <div id="mainContent" class="main-content hidden">
+        <!-- HEADER/NAVEGAÇÃO -->
+        <header class="main-header">
+            <div class="container">
+                <a href="#" class="logo">barbershop</a>
+                <nav class="main-nav">
+                    <ul class="nav-list" id="navList">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#precos">Preços</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+                <button id="logoutBtn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Sair</button>
+            </div>
+        </header>
+
+        <!-- SEÇÃO HERO COM SLIDER -->
+        <section id="inicio" class="hero">
+            <div class="hero-slider">
+                <div class="slide" style="background-image: url('img/imagem1.jpg');"></div>
+                <div class="slide" style="background-image: url('img/imagem2.jpg');"></div>
+                <div class="slide" style="background-image: url('img/imagem3.jpg');"></div>
+                <div class="slide" style="background-image: url('img/imagem4.jpg');"></div>
+            </div>
+            <div class="hero-overlay"></div>
+            <button class="slider-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            <div class="container hero-content">
+                <h1>A Arte do Barbear Clássico</h1>
+                <p>Seu estilo. Nossa precisão. Mais de 10 anos de tradição.</p>
+                <button id="openModalBtnHero" class="btn-primary"><i class="fas fa-cut"></i> Agende Agora</button>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE SERVIÇOS -->
+        <section id="servicos" class="section-padding">
+            <div class="container">
+                <h2>Nossos Serviços Premium</h2>
+                <div class="servicos-grid">
+                    <div class="servico-card">
+                        <i class="fas fa-cut"></i>
+                        <h3>Corte Clássico</h3>
+                        <p>Corte tradicional com acabamento perfeito</p>
+                    </div>
+                    <div class="servico-card">
+                        <i class="fas fa-spa"></i>
+                        <h3>Barbear Premium</h3>
+                        <p>Barbear com produtos de alta qualidade</p>
+                    </div>
+                    <div class="servico-card">
+                        <i class="fas fa-brush"></i>
+                        <h3>Pigmentação de Barba</h3>
+                        <p>Coloração profissional para sua barba</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE PREÇOS -->
+        <section id="precos" class="section-padding bg-dark">
+            <div class="container">
+                <h2>Tabela de Preços</h2>
+                <table class="precos-table">
+                    <thead>
+                        <tr>
+                            <th>Serviço</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Corte Clássico</td>
+                            <td>R$ 40,00</td>
+                        </tr>
+                        <tr>
+                            <td>Barbear Premium</td>
+                            <td>R$ 35,00</td>
+                        </tr>
+                        <tr>
+                            <td>Pigmentação de Barba</td>
+                            <td>R$ 30,00</td>
+                        </tr>
+                        <tr>
+                            <td>Corte + Barbear</td>
+                            <td>R$ 65,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FOOTER/CONTATO -->
+        <footer id="contato" class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-info">
+                        <h4>Entre em Contato</h4>
+                        <p><i class="fas fa-phone"></i> (11) 98765-4321</p>
+                        <p><i class="fas fa-envelope"></i> contato@barbershop.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123 - São Paulo, SP</p>
+                    </div>
+                    <div class="footer-social">
+                        <h4>Siga-nos</h4>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/_souzxy2/" target="_blank" rel="noopener noreferrer" class="social-link instagram" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/91982987008" target="_blank" rel="noopener noreferrer" class="social-link whatsapp" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2025 barbershop. Desenvolvido para funcionalidade.</p>
+            </div>
+        </footer>
+
+        <!-- MODAL DE AGENDAMENTO -->
+        <div id="agendamentoModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Agende seu Horário</h3>
+                <p>Preencha os dados e entraremos em contato para confirmar sua reserva.</p>
+                <form id="scheduleForm">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="servico">Serviço:</label>
+                        <select id="servico" name="servico" required>
+                            <option>Selecione um serviço</option>
+                            <option>Corte Clássico</option>
+                            <option>Barbear Premium</option>
+                            <option>Pigmentação de Barba</option>
+                            <option>Corte + Barbear</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="data">Data:</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="horario">Horário:</label>
+                        <input type="time" id="horario" name="horario" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Agendar</button>
+                </form>
+                <p class="disclaimer-text">**Nota:** Este é apenas um formulário de solicitação. A confirmação será feita via WhatsApp.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- POPUP DE NOTIFICAÇÃO (FORA DO mainContent) -->
+    <div id="notifyPopup" class="notify-popup" aria-live="polite" role="status">
+        <div class="notify-inner">
+            <div class="notify-message" id="notifyMessage"></div>
+            <button class="notify-close" id="notifyClose" aria-label="Fechar">OK</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
